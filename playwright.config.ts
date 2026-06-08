@@ -42,6 +42,11 @@ export default defineConfig<ChromaticConfig>({
       NEXT_PUBLIC_SENTRY_DISABLED: 'true',
       NEXT_PUBLIC_APP_URL: baseURL,
       PORT,
+
+      // CI/test-only placeholders. Never use production secrets here.
+      CLERK_SECRET_KEY: 'sk_test_dummy_for_ci',
+      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: 'pk_test_dummy_for_ci',
+      DATABASE_URL: 'postgresql://dummy_for_ci',
     },
   },
 
