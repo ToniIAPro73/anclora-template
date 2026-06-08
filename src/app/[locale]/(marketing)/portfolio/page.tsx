@@ -36,7 +36,7 @@ export default async function Portfolio(props: PortfolioPageProps) {
       <div className="grid grid-cols-1 justify-items-start gap-3 md:grid-cols-2 xl:grid-cols-3">
         {Array.from({ length: 6 }, (_, i) => (
           <Link className="hover:text-blue-700" key={i} href={`/portfolio/${i}`}>
-            {t('portfolio_name', { name: i })}
+            {t('portfolio_name', { slug: i })}
           </Link>
         ))}
       </div>
@@ -45,13 +45,13 @@ export default async function Portfolio(props: PortfolioPageProps) {
         {`${t('error_reporting_powered_by')} `}
         <a
           className="text-blue-700 hover:border-b-2 hover:border-blue-700"
-          href="https://sentry.io/for/nextjs/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjsboilerplate-logo"
+          href="https://sentry.io/for/nextjs/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjstemplate-logo"
         >
           Sentry
         </a>
       </div>
 
-      <a href="https://sentry.io/for/nextjs/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjsboilerplate-logo">
+      <a href="https://sentry.io/for/nextjs/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjstemplate-logo">
         <Image className="mx-auto mt-2" src={sentryLogo} alt="Sentry" width={130} />
       </a>
     </>

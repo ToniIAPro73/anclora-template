@@ -11,7 +11,7 @@ import { integer, pgTable, serial, timestamp } from 'drizzle-orm/pg-core';
 // Alternatively, if your database is running, you can run `npm run db:migrate` and there is no need to restart the server.
 
 // Need a database for production? Check out https://get.neon.com/BMFYNtx
-// Tested and compatible with Next.js Boilerplate
+// Tested and compatible with Next.js Anclora Template
 
 export const counterSchema = pgTable('counter', {
   id: serial('id').primaryKey(),

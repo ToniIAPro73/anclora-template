@@ -14,7 +14,8 @@ test.describe('Sanity', () => {
 
       await expect(
         page.getByRole('heading', {
-          name: 'Boilerplate Code for Your Next.js Project with Tailwind CSS',
+          name: 'Anclora Template',
+          level: 1,
         }),
       ).toBeVisible();
     });
@@ -26,7 +27,7 @@ test.describe('Sanity', () => {
 
       await expect(page).toHaveURL(/about$/u);
 
-      await expect(page.getByText('Welcome to our About page', { exact: false })).toBeVisible();
+      await expect(page.getByText('Pellentesque habitant morbi', { exact: false })).toBeVisible();
     });
 
     test('should navigate to the portfolio page', async ({ page }) => {

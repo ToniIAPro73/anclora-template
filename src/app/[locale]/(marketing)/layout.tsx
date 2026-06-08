@@ -44,7 +44,7 @@ export default async function Layout(props: {
             <li>
               <a
                 className="border-none text-gray-700 hover:text-gray-900"
-                href="https://github.com/ixartz/Next-js-Boilerplate"
+                href="https://github.com/ixartz/Next-js-Anclora Template"
               >
                 GitHub
               </a>

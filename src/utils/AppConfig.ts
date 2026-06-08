@@ -8,7 +8,7 @@ const localePrefix: LocalePrefixMode = 'as-needed';
 // FIXME: Customize this configuration for your product
 /** Centralized application configuration */
 export const AppConfig = {
-  name: 'Nextjs Starter',
+  name: 'Anclora Template',
   i18n: {
     locales: ['en', 'fr'],
     defaultLocale: 'en',

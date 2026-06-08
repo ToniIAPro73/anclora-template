@@ -34,7 +34,7 @@ export default defineConfig<ChromaticConfig>({
       ? "pglite-server -m 100 --run 'run-s db:migrate start'"
       : "pglite-server -m 100 --run 'run-s db:migrate dev:next'",
     url: baseURL,
-    timeout: 60 * 1000,
+    timeout: 120 * 1000,
     reuseExistingServer: !process.env.CI,
     gracefulShutdown: { signal: 'SIGTERM', timeout: 2 * 1000 },
     env: {
@@ -45,8 +45,9 @@ export default defineConfig<ChromaticConfig>({
 
       // CI/test-only placeholders. Never use production secrets here.
       CLERK_SECRET_KEY: 'sk_test_dummy_for_ci',
-      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: 'pk_test_dummy_for_ci',
-      DATABASE_URL: 'postgresql://dummy_for_ci',
+      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
+        'pk_test_cmVsYXhlZC10dXJrZXktNjcuY2xlcmsuYWNjb3VudHMuZGV2JA',
+      DATABASE_URL: 'postgres://postgres@localhost:5432/postgres',
     },
   },
 

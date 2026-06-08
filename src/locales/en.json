@@ -8,13 +8,13 @@
     "sign_up_link": "Sign up"
   },
   "BaseTemplate": {
-    "description": "Starter code for your Nextjs Boilerplate with Tailwind CSS",
-    "footer_text": "© {year} {name}. Made with <author></author>.",
+    "description": "Enterprise-grade starter code for your Next.js application",
+    "footer_text": "© {year} {name}. Built by <author>Anclora</author>.",
     "main_navigation_label": "Main navigation"
   },
   "Index": {
-    "meta_title": "Next.js Boilerplate Presentation",
-    "meta_description": "Next js Boilerplate is the perfect starter code for your project. Build your React application with the Next.js framework.",
+    "meta_title": "Anclora Template Presentation",
+    "meta_description": "Anclora Template is the ultimate starter kit for your Next.js project, optimized for enterprise SaaS applications.",
     "sponsors_title": "Sponsors",
     "zap_emoji_label": "Zap"
   },
@@ -26,31 +26,31 @@
   "CounterForm": {
     "presentation": "The counter is stored in the database and incremented by the value you provide.",
     "label_increment": "Increment by",
-    "button_increment": "Increment",
-    "error_increment_range": "Value must be between 1 and 3"
+    "error_increment_range": "Please enter a value between 1 and 100.",
+    "button_increment": "Increment"
   },
   "CurrentCount": {
-    "count": "Count: {count}"
-  },
-  "About": {
-    "meta_title": "About",
-    "meta_description": "About page description",
-    "about_paragraph": "Welcome to our About page! We are a team of passionate individuals dedicated to creating amazing software.",
-    "translation_powered_by": "Translation powered by"
+    "count": "Current count: {count}"
   },
   "Portfolio": {
     "meta_title": "Portfolio",
     "meta_description": "Welcome to my portfolio page!",
-    "presentation": "Welcome to my portfolio page! Here you will find a carefully curated collection of my work and accomplishments. Through this portfolio, I'm to showcase my expertise, creativity, and the value I can bring to your projects.",
-    "portfolio_name": "Portfolio {name}",
-    "error_reporting_powered_by": "Error reporting powered by"
+    "presentation": "I'm a Next.js Anclora Template with a simple portfolio. You can easily add your own projects by modifying the code.",
+    "portfolio_name": "Portfolio {slug}",
+    "error_reporting_powered_by": "Error reporting and performance monitoring powered by"
   },
   "PortfolioSlug": {
     "meta_title": "Portfolio {slug}",
     "meta_description": "Portfolio {slug} description",
-    "header": "Portfolio {slug}",
-    "content": "Created a set of promotional materials and branding elements for a corporate event. Crafted a visually unified theme, encompassing a logo, posters, banners, and digital assets. Integrated the client's brand identity while infusing it with a contemporary and innovative approach.",
-    "code_review_powered_by": "Code review powered by"
+    "header": "Portfolio Detail {slug}",
+    "content": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
+    "code_review_powered_by": "AI-powered code reviews powered by"
+  },
+  "About": {
+    "meta_title": "About",
+    "meta_description": "About page description",
+    "about_paragraph": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
+    "translation_powered_by": "Translation and localization management powered by"
   },
   "SignIn": {
     "meta_title": "Sign in",
@@ -61,9 +61,12 @@
     "meta_description": "Effortlessly create an account through our intuitive sign-up process."
   },
   "Dashboard": {
-    "hello_message": "Hello {email}!",
-    "alternative_message": "Need advanced features? Multi-tenancy & Teams, Roles & Permissions, Shadcn UI, End-to-End Typesafety with oRPC, Stripe Payment, Light / Dark mode. Try <url></url>.",
-    "max_message": "Or, need a Self-hosted auth stack (Better Auth)? Try <url></url>."
+    "hello_message": "Welcome back, {email}!",
+    "meta_title": "Dashboard",
+    "meta_description": "Manage your account from the dashboard.",
+    "dashboard_link": "Dashboard",
+    "user_profile_link": "Manage your account",
+    "sign_out": "Sign out"
   },
   "DashboardLayout": {
     "meta_title": "Dashboard",
