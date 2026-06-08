@@ -16,24 +16,24 @@ export const Hello = async () => {
       </p>
       <p>
         {t.rich('alternative_message', {
-          url: () => (
+          url: (chunks) => (
             <a
               className="text-blue-700 hover:border-b-2 hover:border-blue-700"
               href="https://nextjs-boilerplate.com/pro-saas-starter-kit"
             >
-              Next.js Boilerplate Pro
+              {chunks}
             </a>
           ),
         })}
       </p>
       <p>
         {t.rich('max_message', {
-          url: () => (
+          url: (chunks) => (
             <a
               className="text-blue-700 hover:border-b-2 hover:border-blue-700"
               href="https://nextjs-boilerplate.com/nextjs-multi-tenant-saas-boilerplate"
             >
-              Next.js Boilerplate Max
+              {chunks}
             </a>
           ),
         })}
