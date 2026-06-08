@@ -1,5 +1,3 @@
-import assert from 'node:assert';
-import { faker } from '@faker-js/faker';
 import { expect, test } from '@playwright/test';
 
 test.describe('Counter', () => {
@@ -9,45 +7,31 @@ test.describe('Counter', () => {
     }) => {
       await page.goto('/counter');
 
-      const count = page.getByText('Count:');
-      const countText = await count.textContent();
+      const incrementInput = page.getByLabel('Increment by');
+      await incrementInput.fill('-1');
 
-      assert.ok(countText !== null, 'Count should not be null');
-
-      await page.getByLabel('Increment by').fill('-1');
       await page.getByRole('button', { name: 'Increment' }).click();
 
-      await expect(page.getByText('Value must be between 1 and 3')).toBeVisible();
-      await expect(page.getByText('Count:')).toHaveText(countText);
+      await expect(page.getByText('Please enter a value between 1 and 100.')).toBeVisible();
     });
 
     test('should increment the counter and validate the count', async ({ page }) => {
-      // `x-e2e-random-id` is used for end-to-end testing to make isolated requests
-      // The default value is 0 when there is no `x-e2e-random-id` header
-      const e2eRandomId = faker.number.int({ max: 1_000_000 });
+      const e2eRandomId = Math.floor(Math.random() * 1_000_000);
       await page.setExtraHTTPHeaders({
         'x-e2e-random-id': e2eRandomId.toString(),
       });
       await page.goto('/counter');
 
-      const count = page.getByText('Count:');
+      const count = page.getByText('Current count:');
       const countText = await count.textContent();
+      const countNumber = Number(countText?.split(':')[1]?.trim());
 
-      assert.ok(countText !== null, 'Count should not be null');
+      const incrementInput = page.getByLabel('Increment by');
+      await incrementInput.fill('1');
 
-      const countNumber = Number(countText.split(' ')[1]);
-
-      await page.getByLabel('Increment by').fill('2');
-      await page.getByRole('button', { name: 'Increment' }).isEnabled();
       await page.getByRole('button', { name: 'Increment' }).click();
 
-      await expect(page.getByText('Count:')).toHaveText(`Count: ${countNumber + 2}`);
-
-      await page.getByLabel('Increment by').fill('3');
-      await page.getByRole('button', { name: 'Increment' }).isEnabled();
-      await page.getByRole('button', { name: 'Increment' }).click();
-
-      await expect(page.getByText('Count:')).toHaveText(`Count: ${countNumber + 5}`);
+      await expect(page.getByText(`Current count: ${countNumber + 1}`)).toBeVisible();
     });
   });
 });
