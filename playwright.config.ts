@@ -45,7 +45,8 @@ export default defineConfig<ChromaticConfig>({
 
       // CI/test-only placeholders. Never use production secrets here.
       CLERK_SECRET_KEY: 'sk_test_dummy_for_ci',
-      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: 'pk_test_cmVsYXhlZC10dXJrZXktNjcuY2xlcmsuYWNjb3VudHMuZGV2JA',
+      NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
+        'pk_test_cmVsYXhlZC10dXJrZXktNjcuY2xlcmsuYWNjb3VudHMuZGV2JA',
       DATABASE_URL: 'postgres://postgres@localhost:5432/postgres',
     },
   },
