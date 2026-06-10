@@ -15,7 +15,6 @@
   "Index": {
     "meta_title": "Anclora Template Presentation",
     "meta_description": "Anclora Template is the ultimate starter kit for your Next.js project, optimized for enterprise SaaS applications.",
-    "sponsors_title": "Sponsors",
     "zap_emoji_label": "Zap"
   },
   "Counter": {
@@ -43,8 +42,7 @@
     "meta_title": "Portfolio {slug}",
     "meta_description": "Portfolio {slug} description",
     "header": "Portfolio Detail {slug}",
-    "content": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
-    "code_review_powered_by": "AI-powered code reviews powered by"
+    "content": "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo."
   },
   "About": {
     "meta_title": "About",
@@ -61,12 +59,7 @@
     "meta_description": "Effortlessly create an account through our intuitive sign-up process."
   },
   "Dashboard": {
-    "hello_message": "Welcome back, {email}!",
-    "meta_title": "Dashboard",
-    "meta_description": "Manage your account from the dashboard.",
-    "dashboard_link": "Dashboard",
-    "user_profile_link": "Manage your account",
-    "sign_out": "Sign out"
+    "hello_message": "Welcome back, {email}!"
   },
   "DashboardLayout": {
     "meta_title": "Dashboard",

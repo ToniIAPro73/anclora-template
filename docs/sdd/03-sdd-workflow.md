@@ -7,6 +7,7 @@
 3. **Plan técnico** (`docs/sdd/plans/plan-<ID>.md`).
 4. **Tasks SDD** (`docs/sdd/tasks/tasks-<ID>.md`).
 5. **Implementación** (ramas de código, PRs, tests).
+6. **Verificación** (tipos, lint, tests, i18n, dependencias y calidad textual cuando aplique).
 
 ## 2. Patrón híbrido GSD + OpenSpec
 
@@ -38,3 +39,11 @@ Estos IDs deben aparecer en:
 
 - No se acumulan conversaciones largas en el IDE.
 - Toda decisión significativa se vuelca a specs, planes, ADRs o bóveda (Memanto, Command Center).
+
+## 6. Checks mínimos por tipo de cambio
+
+- Código TypeScript/React: `npm run check:types`, `npm run lint`, `npm run test`.
+- Traducciones o claves visibles: `npm run check:i18n` y `npm run check:text-quality`.
+- Dependencias, imports o exports públicos: `npm run check:deps`.
+- Flujos críticos de usuario: `npm run test:e2e`.
+- Copy, metadatos, schema, SEO, GEO o AEO: `npm run check:text-quality`; usar `npm run check:text-quality:strict` antes de publicación.

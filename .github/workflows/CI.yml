@@ -83,6 +83,15 @@ jobs:
       - name: I18n check
         run: npm run check:i18n
 
+      - name: Checkout Anclora agent skills
+        uses: actions/checkout@v6
+        with:
+          repository: ToniIAPro73/anclora-agent-skills
+          path: .anclora-agent-skills
+
+      - name: Text quality, SEO, GEO and AEO check
+        run: npm run check:text-quality
+
   unit:
     strategy:
       matrix:

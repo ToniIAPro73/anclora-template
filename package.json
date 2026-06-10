@@ -17,6 +17,8 @@
     "check:types": "tsc --noEmit --pretty",
     "check:deps": "knip",
     "check:i18n": "i18n-check -l src/locales -s en -u src -f next-intl",
+    "check:text-quality": "node scripts/run-text-quality-gate.mjs",
+    "check:text-quality:strict": "node scripts/run-text-quality-gate.mjs --strict-warnings",
     "commit": "commit",
     "test": "vitest run",
     "test:e2e": "playwright test",

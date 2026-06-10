@@ -7,6 +7,12 @@ import { routing } from '@/libs/I18nRouting';
 import '@/styles/global.css';
 
 export const metadata: Metadata = {
+  title: {
+    default: 'Anclora Template',
+    template: '%s | Anclora Template',
+  },
+  description:
+    'Base Next.js gobernada por SDD para crear aplicaciones del ecosistema Anclora Group.',
   icons: [
     {
       rel: 'apple-touch-icon',

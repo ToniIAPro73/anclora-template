@@ -12,6 +12,7 @@ Este repo está sujeto, como mínimo, a:
 
 - `contracts/core/ANCLORA_ECOSYSTEM_ARCHITECTURE_CONTRACT.md`.
 - `contracts/core/ANCLORA_ECOSYSTEM_CONTRACT_GROUPS.md`.
+- `contracts/core/ANCLORA_TEXT_QUALITY_CONTRACT.md`.
 - Contratos de branding y UX en `docs/standards/` de la bóveda (color tokens, tipografía, favicon, gap analysis).
 
 ## 3. Mapeo con familias de apps
@@ -33,3 +34,19 @@ Las apps del vertical inmobiliario (Data Lab, Nexus, Command Center, Private Est
 
 - Este archivo es la pieza de unión entre stack técnico real y el Playbook SDD Anclora.
 - Los agentes deben leerlo antes de generar código para conocer límites y contratos.
+
+## 6. Calidad textual, SEO, GEO y AEO
+
+Toda feature que afecte textos visibles, traducciones, metadatos, documentación pública, schema, prompts o contenido indexable debe ejecutar el gate central:
+
+```bash
+npm run check:text-quality
+```
+
+Antes de publicación o entrega externa, usar:
+
+```bash
+npm run check:text-quality:strict
+```
+
+La regla es transversal para Codex, Claude Code, Gemini CLI y cualquier agente que opere sobre repos Anclora. No se deben duplicar scripts por repo: el script vive en `anclora-agent-skills` y este template solo expone el comando de conveniencia.

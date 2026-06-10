@@ -1,87 +1,108 @@
-# Anclora Template - Next.js Enterprise SaaS Starter
+# Anclora Template
 
-🚀 **Anclora Template** is a modern, type-safe, and highly opinionated Next.js starter kit designed for rapid development of enterprise-grade SaaS applications. It builds upon a solid foundation of Next.js 16+, Tailwind CSS 4, and TypeScript, optimized for developer productivity and long-term maintainability.
+Base oficial para crear aplicaciones Next.js dentro del ecosistema Anclora Group.
 
-## 🌟 Key Features
+El objetivo de este repo no es ser una demo aislada, sino una plantilla gobernada por SDD, contratos de la Bóveda y gates de calidad reutilizables por Codex, Claude Code, Gemini CLI y otros agentes.
 
-### 🏗️ Core Architecture
-- ⚡ **Next.js (App Router)**: Utilizing the latest features of Next.js 16+.
-- 🔥 **TypeScript & Strict Typing**: Ensuring complete type safety across the entire codebase.
-- 🎨 **Tailwind CSS 4**: Modern utility-first styling with the latest Tailwind features.
-- 🗃️ **Drizzle ORM**: Type-safe database management supporting PostgreSQL (via Neon or PGlite).
-- 💽 **Local-First DB**: Seamless local development using PGlite (Postgres in the browser/node).
+## Cuándo usarla
 
-### 🔐 Authentication & Security
-- 🔒 **Clerk Integration**: Comprehensive user management and authentication (Social Login, MFA, Magic Links).
-- 🛡️ **Arcjet Protection**: Integrated bot detection, rate limiting, and WAF protection.
-- 🔑 **Type-Safe Env**: Secure environment variable handling with T3 Env.
+Usa esta plantilla para crear una nueva app Anclora cuando necesites:
 
-### 🌐 Internationalization (i18n)
-- 🌍 **next-intl**: robust i18n support with support for localized routing and server-side translations.
-- 🔄 **Crowdin Ready**: Pre-configured for automated translation management.
+- Next.js App Router con TypeScript estricto.
+- Rutas localizadas con `next-intl`.
+- Autenticación con Clerk.
+- Persistencia PostgreSQL mediante Drizzle y PGlite para desarrollo local.
+- Observabilidad con Sentry, Checkly y tests automatizados.
+- Flujo Spec-Driven Development documentado en `docs/sdd`.
+- Comprobación transversal de copy, ortografía, humanización, SEO, GEO y AEO.
 
-### 🚓 Quality & Testing
-- 📏 **Linter & Formatter**: Ultra-fast static analysis using Oxlint (Ultracite) and Oxfmt.
-- ✅ **Automated Testing**: Comprehensive coverage with Vitest (unit/integration) and Playwright (E2E/Visual).
-- 🧪 **Storybook**: Isolated UI component development.
-- 🔍 **Bundle Analysis**: Built-in tools to monitor and optimize application size.
+## Flujo obligatorio para agentes IA
 
-### 🚨 Monitoring & Observability
-- 🚨 **Sentry**: Full-stack error monitoring with Spotlight for local development.
-- 📝 **LogTape & Better Stack**: Structured logging and log management.
-- 🖥️ **Checkly**: Synthetic monitoring as code for uptime and E2E validation.
+Antes de implementar una feature, cualquier agente debe leer:
 
-## 🚀 Getting Started
+- `AGENTS.md`.
+- `docs/sdd/00-constitution.md`.
+- `docs/sdd/02-architecture-and-contracts.md`.
+- `docs/sdd/03-sdd-workflow.md`.
+- `docs/sdd/04-agent-feature-guidelines.md`.
 
-### 1. Clone the repository
-```shell
-git clone https://github.com/ToniIAPro73/anclora-template.git my-app
-cd my-app
-```
+El ciclo mínimo es:
 
-### 2. Install dependencies
-```shell
+1. Crear o actualizar `docs/sdd/specs/spec-<ID>.md`.
+2. Crear o actualizar `docs/sdd/plans/plan-<ID>.md`.
+3. Crear o actualizar `docs/sdd/tasks/tasks-<ID>.md`.
+4. Implementar solo las tareas aprobadas.
+5. Ejecutar los checks relevantes.
+6. Reconciliar spec, plan, tasks y ADRs si la implementación cambia alguna decisión.
+
+Para features Real Estate, usa IDs `REAL-<TOPIC>-<NNN>` y consulta los documentos dashboard SDD de la Bóveda.
+
+## Crear una app desde la plantilla
+
+```bash
+git clone git@github.com:ToniIAPro73/anclora-template.git nueva-app
+cd nueva-app
 npm install
-```
-
-### 3. Environment Setup
-Create a `.env.local` file based on `.env.example`:
-```shell
 cp .env.example .env.local
-```
-Fill in your Clerk and Database credentials.
-
-### 4. Run Development Server
-```shell
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) to see your app.
 
-## 📖 Available Commands
+Después de clonar:
 
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Starts development server |
-| `npm run build` | Builds for production |
-| `npm run test` | Runs unit tests (Vitest) |
-| `npm run test:e2e` | Runs E2E tests (Playwright) |
-| `npm run lint` | Runs linter (Oxlint) |
-| `npm run storybook` | Starts Storybook |
-| `npm run db:migrate` | Applies database migrations |
+- Cambia `name`, metadatos y branding.
+- Ajusta `src/utils/AppConfig.ts` a los idiomas reales del producto.
+- Declara la familia contractual de la app en `docs/sdd/02-architecture-and-contracts.md`.
+- Sustituye contenido demo por copy validado.
+- Mantén `.env`, `.env.production` y secretos fuera de Git.
 
-## 🏗️ Project Structure
+## Checks
 
-- `src/app`: Next.js App Router pages and layouts.
-- `src/components`: Shared React components.
-- `src/libs`: Configuration for 3rd party services.
-- `src/models`: Database schema and models.
-- `src/locales`: Internationalization messages.
-- `tests/`: Integration and E2E test suites.
+Checks base:
 
-## 📄 License
+```bash
+npm run check:types
+npm run lint
+npm run test
+npm run check:deps
+npm run check:i18n
+```
 
-Licensed under the MIT License.
+Cuando haya copy visible, traducciones, documentación pública, metadatos, schema, SEO, GEO o AEO:
 
----
+```bash
+npm run check:text-quality
+```
 
-Built with precision for the Anclora ecosystem.
+Antes de publicación externa:
+
+```bash
+npm run check:text-quality:strict
+```
+
+El auditor vive en `anclora-agent-skills`; este repo solo incluye un wrapper para localizarlo en local o en CI.
+
+## Stack
+
+- Next.js App Router.
+- React.
+- TypeScript.
+- Tailwind CSS.
+- Drizzle ORM.
+- PGlite / PostgreSQL.
+- Clerk.
+- Sentry.
+- Vitest.
+- Playwright.
+- Storybook.
+- `next-intl`.
+
+## Estructura principal
+
+- `src/app`: rutas App Router.
+- `src/components`: componentes compartidos.
+- `src/libs`: integraciones y configuración.
+- `src/models`: esquema de datos.
+- `src/locales`: mensajes i18n.
+- `docs/sdd`: constitución, workflow, specs, planes, tasks y ADRs.
+- `scripts`: wrappers de automatización, sin duplicar lógica central.
+- `tests`: pruebas de integración y E2E.
