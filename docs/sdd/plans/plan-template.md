@@ -11,7 +11,7 @@
 ## 2. Contexto técnico
 
 - Repos afectados.
-- Módulos/paths (`src/app/...`, `src/libs/*`, `src/models/Schema.ts`, etc.).[cite:105]
+- Módulos/paths (`src/app/...`, `src/libs/*`, `src/models/Schema.ts`, etc.).
 
 ## 3. Arquitectura propuesta
 
@@ -26,13 +26,13 @@
 
 ## 5. Flujos principales
 
-Describe cada flujo end-to-end con referencia a los REQ de la spec.[cite:116]
+Describe cada flujo end-to-end con referencia a los REQ de la spec.
 
 ## 6. Estrategia de tests
 
 - Unit (Vitest).
 - Integration (DB, API routes).
-- E2E (Playwright/Checkly).[cite:105]
+- E2E (Playwright/Checkly).
 
 ## 7. Riesgos técnicos
 

@@ -4,7 +4,7 @@
 
 ## 1. Metadatos
 
-- **ID**: `<VERTICAL>-<TOPICO>-<NNN>` (ej. `REAL-OTP-001`).[cite:2]
+- **ID**: `<VERTICAL>-<TOPICO>-<NNN>` (ej. `REAL-OTP-001`).
 - **Producto / App**: (ej. `anclora-template` → prototipo; `anclora-nexus`, `anclora-private-estates`, etc.).
 - **Vertical**: Core / Real Estate / Energía / Internas / Premium / Ultra Premium.
 - **Estado**: Draft / In Review / Approved / Implemented.
@@ -23,7 +23,7 @@ Describe el objetivo de la feature y sus beneficios (seguridad, negocio, UX, etc
 
 ## 4. Functional Requirements (EARS)
 
-Define requisitos siguiendo EARS, como en la especificación de OTP:[cite:116][cite:115]
+Define requisitos siguiendo EARS, como en la especificación de OTP de Anclora:
 
 - **REQ-X (Activado por Evento)**: CUANDO … EL sistema DEBERÁ …
 - **REQ-Y (Estado No Deseado)**: SI … EL sistema DEBERÁ …
@@ -37,16 +37,16 @@ Define requisitos siguiendo EARS, como en la especificación de OTP:[cite:116][c
 
 ## 6. Data Model
 
-- Nuevas tablas/campos (Drizzle schemas, índices).[cite:116]
+- Nuevas tablas/campos (Drizzle schemas, índices).
 - Relación con modelos existentes.
 
 ## 7. Verification Criteria
 
 - Pruebas automatizadas (unit/integration/e2e) y pasos manuales clave.
-- Casos de Red Team cuando aplique (por ejemplo, fuerza bruta OTP).[cite:116]
+- Casos de Red Team cuando aplique (por ejemplo, fuerza bruta OTP).
 
 ## 8. Impacto en Real Estate Dashboard (si aplica)
 
-- Apps afectadas (APE, ADL, AES, ANX, ACG, etc.).[cite:2]
+- Apps afectadas (APE, ADL, AES, ANX, ACG, etc.).
 - Métricas nuevas o modificadas.
 - Flujos que deben reflejarse en `indice-dashboard-real-estate.md`.
